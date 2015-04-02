@@ -1,13 +1,15 @@
 <br>awesome (from suvey.hbs)!
 <ul>
 
-    {{#each}}
+  {{#each model as |question|}}
     <li>
-      {{name}}
+
+        {{component question.type model=question}}
+
     </li>
       {{/each}}
 
 </ul>
-<!--
+
+
 {{input type="text" placeholder="Name" value=newName action="addName"}}
--->
