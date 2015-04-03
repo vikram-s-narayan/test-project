@@ -6,7 +6,8 @@ export default DS.Model.extend({
   placeholder: DS.attr(),
   action: DS.attr(),
   cols: DS.attr(),
-  rows: DS.attr()
+  rows: DS.attr(),
+  optionsArray: DS.attr()
 
 }).reopenClass({
   FIXTURES: [
@@ -26,7 +27,20 @@ export default DS.Model.extend({
     {
       id: 4, type: 'text-input', name: 'dinki', placeholder: 'your name', value: 'newName', action: 'addName' },
     {
-      id: 5, type: 'radio-question', placeholder: 'your name', value: 'newName', action: 'addName' },
+      id: 5, type: 'radio-question',
+      optionsArray: [{
+          name: 'gender',
+          value: 'female',
+          htmlText: 'female'
+        },
+          {
+          name: 'gender',
+          value: 'male',
+          htmlText: 'male'
+        }
+
+      ]
+      },
     {
       id: 6, type: 'textarea-question', placeholder: 'your name', value: 'newName', action: 'addName',
       cols: "80",

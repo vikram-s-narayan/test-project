@@ -1,2 +1,13 @@
-{{yield}}
-radio question
+
+
+{{#each item in model.optionsArray}}
+
+{{#radio-button
+  name=item.name
+  value=item.value
+}}
+  {{item.htmlText}}
+
+  {{/radio-button}}
+
+{{/each}}
